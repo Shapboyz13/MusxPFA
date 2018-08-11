@@ -1,0 +1,57 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}"> -->
+
+<div class="wrapper" style="margin-top:3.54rem">
+    <div class="track-list-div">
+        <ul class="track-list-ul">
+          {% for song in songs %}
+            <li class="track-item d-flex">
+                <div class="track-img-play">
+                    <span class="track-icon-span">
+                        <img src="static/images/download1.jpeg" alt="" class="track-icon">
+                    </span>
+                    <span class="play-button d-flex justify-content-center align-items-center">
+                        <a href="javascript:void(0);" onclick="playSong('{{song}}')">
+                          <img src="static/images/play-arrow.svg" alt="" class="play-button-icon">
+                        </a>
+                    </span>
+                </div>
+                <div class="track-details d-flex flex-column justify-content-center">
+                    <span class="track-name">{{song}}</span>
+                    <span class="track-artist">Eagles</span>
+                </div>
+                <div class="track-length-options d-flex align-items-center justify-content-around">
+                    <span class="track-length">04:24</span>
+                    <img src="static/images/show-more.svg" alt="" class="track-options dropdown-toggle" data-toggle="dropdown">
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a class="dropdown-item" href="#">Action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
+            </li>
+            {% endfor %}
+            <audio controls="controls" autoplay="">
+              <source src="">
+                Your browser does not support the audio element.
+              </audio>
+              <script type="text/javascript">
+              function playSong(song){
+                $('audio').attr('src','/static/music/'+song);
+              }
+              </script>
+        </ul>
+    </div>
+<div>
+
+
+  <!-- <ul>
+  {% for song in songs %}
+  <li><a href="javascript:void(0);" onclick="playSong('{{song}}')">{{song}}</a></li>
+  {% endfor %}
+</ul> -->
+
+{% endblock %}

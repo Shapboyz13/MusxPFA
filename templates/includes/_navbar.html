@@ -1,0 +1,9 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/list" style="font-size: 1rem;width:auto; display: flex; margin-top: 2px">MusxPFA</a>
+   <form action="/search/" class="form-inline my-lg-0" style="width:75%; display: flex; margin-top: 2px" method="POST">
+    <input style="margin-left: auto; width:80%" name="search" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    <button style="margin-left: auto; width:auto" type="submit" class="btn btn-default search-btn" data-toggle="collapse" data-target="#navbarSupportedContent" (click)="searchYt()" *ngIf="!navbar">
+      <img src="/static/images/search.png" alt="">
+    </button>
+  </form>
+</nav>
